@@ -12,7 +12,6 @@ class TaskController extends Controller
     // for  retrieve data by alphabetical order
     public function index()
     {
-        $tasks = DB::table('tasks')->get();
         $tasks = DB::table('tasks')->orderBy('name')->get();
         return view('tasks', compact('tasks'));
     }
